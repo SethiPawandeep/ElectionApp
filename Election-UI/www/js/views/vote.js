@@ -4,7 +4,7 @@ define(['marionette', 'tpl!templates/vote'], function (Marionette, tplVote) {
         templateHelpers: function(){
             var that = this;
             return {
-                candidateList: that.option.candidateList,
+                candidateList: that.options.candidateList,
                 candidateListSize: that.options.candidateListSize
             };
         }

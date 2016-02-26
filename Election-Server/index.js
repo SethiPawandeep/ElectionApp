@@ -144,20 +144,21 @@ var SampleApp = function () {
             
         
     }
-        };
-
-     
-/*    
-            
+           
+               
         self.routes['/voter'] = function(req, res) {
             
             console.log(req.body);
-            DB.any('INSERT INTO VOTER (UIDI, enrollment_id1, enrollment_id2, enrollment_id3, first_name, last_name) values(uidi, enrollment_id1, enrollment_id2, enrollment_id3, first_name, last_name)')
-                .then(function(data){
-                res.json(datal);
+//            DB.any('INSERT INTO VOTER (UIDI, enrollment_id1, enrollment_id2, enrollment_id3, first_name, last_name) values(uidi, enrollment_id1, enrollment_id2, enrollment_id3, first_name, last_name)')
+//                .then(function(data){
+                res.json(data);
             })
             
-        }*/
+        }
+        };
+
+         
+        
         
 
 
