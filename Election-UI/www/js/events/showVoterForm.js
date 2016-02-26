@@ -19,16 +19,16 @@ define(['app', 'models/citizen', 'events/voterConfirm'], function (App, CitizenD
             }));
             voterRegistrationView.listenTo(voterRegistrationView, 'signup', function () {
                 citizen.fetch();
-
-                if (voter.get('first_name') == first_name && voter.get('last_name') == last_name && voter.get('enrollment_id1') == enrollment_id1 && voter.get('enrollment_id2') == enrollment_id2 && voter.get('enrollment_id3') == enrollment_id3 && voter.get('aadharNumber') == UIDI) {
-                    require(['events/showVoterConfirm'], function (VoterConfirm) {
-
-                    });
+//
+//                if (voter.get('first_name') == first_name && voter.get('last_name') == last_name && voter.get('enrollment_id1') == enrollment_id1 && voter.get('enrollment_id2') == enrollment_id2 && voter.get('enrollment_id3') == enrollment_id3 && voter.get('aadharNumber') == UIDI) {
+//                    //require(['events/showVoterConfirm'], function (VoterConfirm) {
+//
+//                    //});
 
 
                     // alert('Hi ' + voter.get('name') + ', we dont save the voter model yet... but working on it. :D');
                     //   the voter model has all the details after the form was filled out. Should be able to do voter.save() once backend has the post implemented.
-                }
+            //    }
             });
         });
     });

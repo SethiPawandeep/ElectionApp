@@ -18,9 +18,10 @@ define(['backbone', 'config', 'jQuery'], function (Backbone, Config, $) {
         },
         url: Config.path + '/vote'
     });
-    var voteModelCollection = Backbone.Collection.extend({
+    var voteCollectionModel = Backbone.Collection.extend({
         model: voteModel,
         url: Config.path + '/vote'
     });
 
+    return voteCollectionModel;
 });
