@@ -116,7 +116,7 @@ var SampleApp = function () {
         self.routes = {};
 
         self.routes['/asciimo'] = function (req, res) {
-            var link = "http://i.imgur.com/kmbjB.png";
+            var link = "http://pmindia.gov.in/wp-content/uploads/2014/06/High1.jpg";
             res.send("<html><body><img src='" + link + "'></body></html>");
         };
 
@@ -125,7 +125,7 @@ var SampleApp = function () {
             res.send(self.cache_get('index.html'));
         };
         self.routes['/candidate'] = function(req, res) {
-            var link = "'http://i.imgur.com/kmbjB.png'";
+            var link = "'https://lh3.googleusercontent.com/-UAu_0KbEMuHuMlccGwZtAo-bdM3Uo5Zr3RdEJUnDZsABV6tDUDe0ttdk-mtawAV6OY=w300'";
             DB.any('SELECT ' + link + ' as img_url, ca.*, co.constituency as constituency from candidate ca inner join constituency co on ca.constituency_id = co.constituency_id')
                 .then(function(data){
                 res.json(data);
