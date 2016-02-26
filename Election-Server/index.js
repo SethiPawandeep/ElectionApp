@@ -131,9 +131,8 @@ var SampleApp = function () {
                 res.json(data);
             })
         }
-        };
-
-/*        self.routes ['/citizen'] = function(req, res) {
+        
+           self.routes ['/citizen'] = function(req, res) {
             
             if(req.query.aadharNumber){
                 console.log(req.query.aadharNumber);
@@ -144,8 +143,11 @@ var SampleApp = function () {
             })
             
         
-    };
-    
+    }
+        };
+
+     
+/*    
             
         self.routes['/voter'] = function(req, res) {
             

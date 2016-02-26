@@ -1,5 +1,5 @@
 define(['backbone', 'config', 'jQuery'], function (Backbone, Config, $) {
-    var voteModel = Backbone.Model.extend({
+    var candidateModel = Backbone.Model.extend({
         defaults: {
             candidate_id: '0',
             first_name: 'FirstName',
@@ -8,7 +8,7 @@ define(['backbone', 'config', 'jQuery'], function (Backbone, Config, $) {
 
         voteByCandidateId: function (candidate_id) {
             $.ajax({
-                url: Config.path + '/vote',
+                url: Config.path + '/candidate',
                 param: {
                     candidate_id: candidate_id
                 }
@@ -16,11 +16,11 @@ define(['backbone', 'config', 'jQuery'], function (Backbone, Config, $) {
                 console.log(data);
             });
         },
-        url: Config.path + '/vote'
+        url: Config.path + '/candidate'
     });
     var voteCollectionModel = Backbone.Collection.extend({
         model: voteModel,
-        url: Config.path + '/vote'
+        url: Config.path + '/candidate'
     });
 
     return voteCollectionModel;
