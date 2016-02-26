@@ -1,3 +1,3 @@
-define(['events/showHeader', , 'events/showVoterForm', 'events/showCandidateList'/* 'events/showVoterConfirm', 'events/showVotePage'*/], function(){
+define(['events/showHeader', , 'events/showVoterForm', 'events/showCandidateList'], function(){
    console.log('Events Loaded');
 });
