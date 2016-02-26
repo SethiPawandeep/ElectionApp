@@ -1,4 +1,6 @@
 <div class="col-sm-4 col-xs-12">
+    {[for(var i = 0; i < candidateListSize(); i++){]}
     <label class="radio">
-        <input type="radio" name="Candidate" value="{{candidate_id}}" />{{first_name}} {{last_name}}</label>
+        <input type="radio" name="Candidate" value="{{candidateList.get(i).get('candidate_id')}}" />{{candidateList.get(i).get("first_name")}} {{candidateList.get(i).get("last_name")}}</label>
+{[ }]}
 </div>
