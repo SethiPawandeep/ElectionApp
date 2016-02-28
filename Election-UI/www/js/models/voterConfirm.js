@@ -9,10 +9,10 @@ define(['backbone', 'config'], function(Backbone, Config){
            enrollment_id3: '0000'
        } 
     });
-    var candidateModelCollection = Backbone.Collection.extend({
-        model: candidateModel ,
+    var voterModelCollection = Backbone.Collection.extend({
+        model: voterModel ,
         url: Config.path + '/voterConfirm' 
     });
 
-    return candidateModelCollection;
+    return voterModelCollection;
 });

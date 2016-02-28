@@ -134,27 +134,31 @@ var SampleApp = function () {
         
            self.routes ['/citizen'] = function(req, res) {
             
-            if(req.query.aadharNumber){
-                console.log(req.query.aadharNumber);
+            if(req.query.findByUIDI){
+                console.log(req.query.findByUIDI);
+                DB.one('SELECT * from citizen where uidi = $1', req.query.findByUIDI).then(function(data){
+                    res.json(data);
+                }).catch(function (e) {
+                    console.log(e);
+                    res.error(e);
+                });
+            } else {
+                res.error('error');
             }
-            DB.any('SELECT (first_name, last_name, enrollment_id1, enrollment_id2, enrollment_id3, UIDI) from citizen where UIDI = ?1', req.query.aadharNumber)
-                .then(function(data){
-                res.json(data);
-            })
             
         
     }
            
-//               
-//        self.routes['/voter'] = function(req, res) {
-//            
-//            console.log(req.body);
-////            DB.any('INSERT INTO VOTER (UIDI, enrollment_id1, enrollment_id2, enrollment_id3, first_name, last_name) values(uidi, enrollment_id1, enrollment_id2, enrollment_id3, first_name, last_name)')
-////                .then(function(data){
-//                res.json(data);
-//            })
-//            
-//        }
+               
+        self.routes['/voter'] = function(req, res) {
+            
+            console.log(req.body);
+            DB.any('INSERT INTO VOTER (UIDI, enrollment_id1, enrollment_id2, enrollment_id3, first_name, last_name) values(uidi, enrollment_id1, enrollment_id2, enrollment_id3, first_name, last_name)')
+                .then(function(data){
+                res.json(data);
+            })
+            
+        }
         };
 
          

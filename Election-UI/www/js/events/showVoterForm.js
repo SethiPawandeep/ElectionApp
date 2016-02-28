@@ -1,31 +1,39 @@
-define(['app', 'models/citizen'/*, 'events/voterConfirm'*/], function (App, CitizenModel/*, VoterConfirm */) {
+define(['app'], function (App) {
     App.commands.setHandler('voterForm', function () {
-        require(['views/voterRegister', 'models/voter'], function (VoterRegister, VoterModel) {
+        require(['views/voterRegister', 'models/voter', 'models/citizen'], function (VoterRegister, VoterModel, CitizenModel) {
 
-//            var citizen = new CitizenModel(),
-//                citizenConfirmationView;
-//            App.Main.show(citizenConfirmationView = new VoterConfirm({
-//                model: citizen
-//            }));
 
             var voter = new VoterModel(),
+                citizen = new CitizenModel(),
                 voterRegistrationView;
             App.Main.show(voterRegistrationView = new VoterRegister({
                 model: voter
             }));
             voterRegistrationView.listenTo(voterRegistrationView, 'signup', function () {
-//                citizen.fetch();
-
-//                if (voter.get('first_name') == citizen.options.first_name && voter.get('last_name') == citizen.options.last_name && voter.get('enrollment_id1') == citizen.options.enrollment_id1 && voter.get('enrollment_id2') == citizen.options.enrollment_id2 && voter.get('enrollment_id3') == citizen.options.enrollment_id3 && voter.get('aadharNumber') == citizen.options.UIDI) {
-//                    
-//                    voter.save();
-//                }
-                    });
-                
+                citizen.fetch({
+                    data: {
+                        findByUIDI: voter.get('aadharNumber').replace(/\s/g, '')
+                    }
+                }).done(function () {
+                    var enId = voter.get('enrollmentId').split('/');
+                    if (voter.get('first_name') === citizen.get('first_name') &&
+                        voter.get('last_name') == citizen.get('last_name') &&
+                        enId[0] == citizen.get('enrollment_id1') &&
+                        enId[1] == citizen.get('enrollment_id2') &&
+                        enId[2] == citizen.get('enrollment_id3')) {
+                        App.execute('voterConfirm', voter, citizen);
+                    } else {
+                        alert('invalid credentials')
+                    }
+                }).fail(function () {
+                    alert('invalid credentials error communicating with server');
+                });
             });
 
-            // alert('Hi ' + voter.get('name') + ', we dont save the voter model yet... but working on it. :D');
-            //   the voter model has all the details after the form was filled out. Should be able to do voter.save() once backend has the post implemented.
-            //    }
         });
+
+        // alert('Hi ' + voter.get('name') + ', we dont save the voter model yet... but working on it. :D');
+        //   the voter model has all the details after the form was filled out. Should be able to do voter.save() once backend has the post implemented.
+        //    }
     });
+});

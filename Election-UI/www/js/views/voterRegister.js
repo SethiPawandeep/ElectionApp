@@ -3,7 +3,7 @@ define(['marionette', 'tpl!templates/voterRegister', 'kendo/kendo.maskedtextbox'
         template: tplVoterRegister,
         bindings: {
             'input.firstName': 'first_name',
-            'input.firstName': 'last_name',
+            'input.lastName': 'last_name',
             'input.aadharNumber': 'aadharNumber',
             'input.enrollmentId': 'enrollmentId'
         },
@@ -11,8 +11,12 @@ define(['marionette', 'tpl!templates/voterRegister', 'kendo/kendo.maskedtextbox'
             EnrollmentId: 'input.enrollmentId',
             AadharNumber: 'input.aadharNumber'
         },
-        triggers: {
-            'click.voterSignUp': 'signup'
+        events: {
+            'click input.btn.voterSignUp': 'onVoterSignUp'
+        },
+        onVoterSignUp: function (e) {
+            console.log('signupClicked ' + e);
+            this.trigger('signup');
         },
         onRender: function () {
             this.stickit();

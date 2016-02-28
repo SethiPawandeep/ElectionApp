@@ -1,4 +1,4 @@
-define(['marionette', 'tpl!templates/voterConfirm'], function(Marionette, tplVoterConfirm){
+define(['marionette', 'tpl!templates/voterDetailConfirm'], function(Marionette, tplVoterConfirm){
     var voterConfirm = Marionette.ItemView.extend({
         template: tplVoterConfirm,
         triggers:{
