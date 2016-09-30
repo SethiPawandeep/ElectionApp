@@ -31,12 +31,12 @@ require(['app', 'events/main', 'bootstrap', 'stickit'], function (App) {
     App.start();
     
     App.execute('headerShow');
-
+  //  App.execute('showHome');
   App.execute('voterForm');
   
-  //  App.execute('voterConfirm');
+//    App.execute('voterConfirm');
     
- //  App.execute('candidateListDisplay');
+   App.execute('candidateListDisplay');
     
  /*   App.Main.show(new WelcomeView({
         collection: new Backbone.Collection([{

@@ -6,9 +6,6 @@ define(['app'], function (App) {
             App.Header.show(new HeaderView({
 
             }));
-            
-
-
         });
     });
 });

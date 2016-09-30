@@ -8,6 +8,7 @@ define(['marionette'], function(Marionette) {
         },
         regions: {
             Header: 'div.header',
+            //Home: 'div.home',
  //           Form: 'div.form',
             Main: 'div.main'
         }

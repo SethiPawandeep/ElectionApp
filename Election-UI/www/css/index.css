@@ -113,3 +113,9 @@ h1 {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
 }
+
+#logo-img {
+    background: url('../img/Election_Commission_of_India_Logo.png') no-repeat;
+    height: 150px;
+    width: 150px;
+}
