@@ -36,7 +36,7 @@ require(['app', 'events/main', 'bootstrap', 'stickit'], function (App) {
   
 //    App.execute('voterConfirm');
     
-   App.execute('candidateListDisplay');
+//   App.execute('candidateListDisplay');
     
  /*   App.Main.show(new WelcomeView({
         collection: new Backbone.Collection([{
