@@ -23,6 +23,5 @@ define(['backbone', 'config', 'jquery'], function (Backbone, Config, $) {
         },
         url: Config.path + '/citizen'
     });
-
     return citizen;
 });

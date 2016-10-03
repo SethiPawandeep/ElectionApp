@@ -16,7 +16,7 @@ define(['marionette', 'tpl!templates/voterOTP', 'kendo/kendo.maskedtextbox'], fu
         },
         onRender: function() {
             this.stickit();
-            this.ui.OTP.kendoMaskedxectBox({
+            this.ui.OTP.kendoMaskedTectBox({
                 mask: "000000",
                 clearPromptChar: true
             });

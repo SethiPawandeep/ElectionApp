@@ -1,9 +1,10 @@
-define(['app', 'model/vote'], function(App, VoteCollection){
-    App.commands.sethandler('votePageDisplay', function(){
+define(['app', 'model/candidate'], function(App, CandidateCollection){
+    App.commands.sethandler('votePageDisplay', function(voter){
        require(['views/vote', 'backbone'], function(VoteView, Backbone){
-           var list = new VoteCollection();
+           var list = new CandidateCollection();
            list.fetch();
-           App.main.show(new VoteView({
+           //Display only those candidates which are from the voter's constituency
+           App.Main.show(new VoteView({
                collection: list
            }));
        }) ;
