@@ -22,7 +22,7 @@ define(['app'], function (App) {
                         enId[2] == citizen.get('enrollment_id3')) {
                         App.execute('voterOTP', voter, citizen);
                     } else {
-                        alert('Invalid credentials.')
+                        alert('Invalid credentials.');
                     }
                 }).fail(function () {
                     alert('Invalid credentials. Error communicating with server');
