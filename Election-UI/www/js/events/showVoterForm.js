@@ -16,6 +16,7 @@ define(['app'], function (App) {
                     var enId = voter.get('enrollmentId').split('/');
                     if (voter.get('first_name') === citizen.get('first_name') &&
                         voter.get('last_name') == citizen.get('last_name') &&
+                        voter.get('phoneNumber') == citizen.get('phoneNumber') &&
                         enId[0] == citizen.get('enrollment_id1') &&
                         enId[1] == citizen.get('enrollment_id2') &&
                         enId[2] == citizen.get('enrollment_id3')) {
@@ -24,7 +25,7 @@ define(['app'], function (App) {
                         alert('Invalid credentials.')
                     }
                 }).fail(function () {
-                    alert('invalid credentials error communicating with server');
+                    alert('Invalid credentials. Error communicating with server');
                 });
             });
         });

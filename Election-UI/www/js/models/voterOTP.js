@@ -1,6 +1,6 @@
 define(['backbone', 'config', 'jquery'], function (Backbone, Config, $) {
    var voterOTP = Backbone.Model.extend({
-      defaults: {
+      /*defaults: {
           uidi: 000000,
           phoneNumber: 0000000000,
           OTP: 000000
@@ -15,7 +15,7 @@ define(['backbone', 'config', 'jquery'], function (Backbone, Config, $) {
                     console.log(data);
                     });
         },
-       url: Config.path + '/voterOTP'
+       url: Config.path + '/voterOTP'*/
    }); 
     return voterOTP;
 });

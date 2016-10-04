@@ -1,11 +1,10 @@
 define(['backbone', 'app'], function (Backbone, App) {
-
     App.commands.setHandler('setPassword', function (voter, citizen) {
-
         require(['views/voterConfirm', 'models/voterConfirm'], function (VoterConfirmation, VoterConfirmModel) {
-            var voterConfirmationView;
+            var 
+                voterConfirmationView;
             App.Main.show(voterConfirmationView = new VoterConfirmation({
-                model: citizen
+                model: voter //doubt
             }));
             voterConfirmationView.listenTo(voterConfirmationView, 'confirm', function () {
                 voter.save();
