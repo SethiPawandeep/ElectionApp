@@ -22,4 +22,5 @@ define(['marionette', 'tpl!templates/voterOTP', 'kendo/kendo.maskedtextbox'], fu
             });
         }
     });
+    return voterOTP;
 });

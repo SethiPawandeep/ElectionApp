@@ -140,10 +140,10 @@ var SampleApp = function () {
                     res.json(data);
                 }).catch(function (e) {
                     console.log(e);
-                    res.error(e);
+//                    res.error(e);
                 });
             } else {
-                res.error('error');
+//                res.error('error');
             }
             
         

@@ -1,5 +1,5 @@
 define(['app', 'model/candidate'], function(App, CandidateCollection){
-    App.commands.sethandler('votePageDisplay', function(voter){
+    App.commands.setHandler('votePageDisplay', function(voter){
        require(['views/vote', 'backbone'], function(VoteView, Backbone){
            var list = new CandidateCollection();
            list.fetch();

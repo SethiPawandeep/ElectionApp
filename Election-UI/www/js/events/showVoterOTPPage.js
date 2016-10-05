@@ -1,5 +1,5 @@
 define(['app'], function (App) {
-    App.commands.setHandeler('voterOTP', function (voter, citizen) {
+    App.commands.setHandler('voterOTP', function (voter, citizen) {
         require(['views/voterOTP', 'models/voterOTP'], function (VoterOTP, VoterOTPModel) {
             var OTP = new VoterOTPModel(),
                 voterOTPView;
@@ -7,7 +7,7 @@ define(['app'], function (App) {
                 model: OTP
             }));
             voterOTPView.listenTo(voterOTPView, 'confirmOTP', function () {
-                    citizen.fetch({
+                citizen.fetch({
                     data: {
                         data: voter.get('aadharNumber').replace(/\s/g, '')
                     }
@@ -25,3 +25,4 @@ define(['app'], function (App) {
         });
     });
 });
+

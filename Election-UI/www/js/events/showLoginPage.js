@@ -10,7 +10,7 @@ define(['app'], function (App) {
             loginView.listenTo(loginView, 'login', function () {
                 voter.fetch({
                     data: {
-                        findByPhoneNumber: login.get('phoneNumber');
+                        findByPhoneNumber: login.get('phoneNumber')
                     }
                 }).done(function () {
                     if (voter.get('password') === login.get('password') &&

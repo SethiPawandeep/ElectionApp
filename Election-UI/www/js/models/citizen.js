@@ -9,7 +9,8 @@ define(['backbone', 'config', 'jquery'], function (Backbone, Config, $) {
             last_name: 'Last Name',
             date_of_birth: '0000-00-00',
             address: 'Address',
-            constituency: 'Constituency'
+            constituency: 'Constituency',
+            phone_number: '0000000000'
         },
         findByAadharNumber: function (aadharNumber) {
             $.ajax({
