@@ -32,12 +32,7 @@ require(['app', 'events/main', 'bootstrap', 'stickit'], function (App) {
 
     App.execute('headerShow');
     App.execute('showHome');
-    //  App.execute('voterForm');
-    //  App.execute('voterOTP');
-    //    App.execute('setPassword');
-//    App.execute('login');
-    //   App.execute('candidateListDisplay');
-
+ 
     /*   App.Main.show(new WelcomeView({
            collection: new Backbone.Collection([{
                firstName: 'Arvind',

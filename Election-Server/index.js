@@ -2,6 +2,7 @@
 //  OpenShift sample Node application
 var express = require('express');
 var fs = require('fs');
+var cors = require('cors');
 var pgp = require('pg-promise')({});
 
 var cn = {
@@ -137,6 +138,7 @@ var SampleApp = function () {
             if(req.query.findByUIDI){
                 console.log(req.query.findByUIDI);
                 DB.one('SELECT * from citizen where uidi = $1', req.query.findByUIDI).then(function(data){
+                    console.log(data);
                     res.json(data);
                 }).catch(function (e) {
                     console.log(e);
