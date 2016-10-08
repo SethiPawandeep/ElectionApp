@@ -13,7 +13,7 @@ define(['marionette', 'tpl!templates/voterDetailConfirmAndSetPassword'], functio
             'click input.btn.voterConfirm': 'onVoterConfirm'
         },
         onVoterConfirm: function (e) {
-            confirm.log('Confirm Clicked' + e);
+            console.log('Confirm Clicked' + e);
             this.trigger('confirm');
         }
     });

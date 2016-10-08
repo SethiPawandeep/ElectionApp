@@ -10,9 +10,9 @@ define(['app'], function (App) {
             headerView.listenTo(headerView, 'openCandidateList', function () {
                 App.execute('candidateListDisplay');
             });
-/*            headerView.listenTo(headerView, 'openVotePage', function () {
-                App.execute('votePageDisplay');
-            });*/
+            /*            headerView.listenTo(headerView, 'openVotePage', function () {
+                            App.execute('votePageDisplay');
+                        });*/
             /*headerView.listenTo(headerView, 'openResult', function(){
                 App.execute('showHome'); 
             });*/
