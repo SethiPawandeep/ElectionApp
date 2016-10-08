@@ -2,8 +2,8 @@
 //  OpenShift sample Node application
 var express = require('express');
 var fs = require('fs');
-var cors = require('cors');
 var pgp = require('pg-promise')({});
+var bodyParser = require('body-parser');
 
 var cn = {
     host: 'localhost',
@@ -153,11 +153,11 @@ var SampleApp = function () {
            
                
         self.routes['/voter'] = function(req, res) {
-            
             console.log(req.body);
-            DB.any('INSERT INTO VOTER (UIDI, enrollment_id1, enrollment_id2, enrollment_id3, first_name, last_name) values(uidi, enrollment_id1, enrollment_id2, enrollment_id3, first_name, last_name)')
+            DB.any('INSERT INTO VOTER (UIDI, enrollment_id1, enrollment_id2, enrollment_id3, first_name, last_name, phone_number, password) values(uidi, enrollment_id1, enrollment_id2, enrollment_id3, first_name, last_name, phone_number, password)')
                 .then(function(data){
                 res.json(data);
+                console.log('table me bhi write ho gaya');
             })
             
         }
@@ -176,6 +176,8 @@ var SampleApp = function () {
         var r;
         self.createRoutes();
         self.app = express();
+        
+        self.app.use(bodyParser.json());
 
         //  Add handlers for the app (from the routes).
         for (r in self.routes) {
@@ -183,7 +185,25 @@ var SampleApp = function () {
                 self.app.get(r, self.routes[r]);
             }
         }
-        self.app.use('/ui', express.static('../Election-UI/www'));
+        
+        self.app.post('/voter', function(req,res){
+            console.log('post of voter');
+            console.log(req.body);
+            var voter = req.body;
+            var uidi = voter.aadharNumber.replace(/\s/g, '');
+            var enId = voter.enrollmentId.split('/');
+            DB.any('INSERT INTO VOTER (UIDI, enrollment_id1, enrollment_id2, enrollment_id3, first_name, last_name, phone_number, password) values($1, $2, $3, $4, $5, $6, $7, $8)', [uidi, enId[0], enId[1], enId[2], voter.first_name, voter.last_name, voter.phoneNumber, voter.password])
+                .then(function(data){
+                res.json(req.body);
+                console.log('table me bhi write ho gaya');
+            }, function(err){
+                console.log(err);
+                res.status(500).send(err);
+            })
+            
+        });
+        
+        self.app.use('/ui', express.static('../Election-UI/www/'));
     };
 
 

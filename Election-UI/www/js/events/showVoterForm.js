@@ -7,9 +7,7 @@ define(['app'], function (App) {
             App.Main.show(voterRegistrationView = new VoterRegister({
                 model: voter
             }));
-            console.log(voter);
             voterRegistrationView.listenTo(voterRegistrationView, 'signup', function () {
-//                console.log(voter);
                 citizen.fetch({
                     data: {
                         findByUIDI: voter.get('aadharNumber').replace(/\s/g, '')
@@ -22,7 +20,7 @@ define(['app'], function (App) {
                         enId[0] == citizen.get('enrollment_id1') &&
                         enId[1] == citizen.get('enrollment_id2') &&
                         enId[2] == citizen.get('enrollment_id3')) {
-                        App.execute('setPassword', voter);
+                        App.execute('setPassword', voter, citizen);
                     } else {
                         alert('Invalid credentials.');
                     }

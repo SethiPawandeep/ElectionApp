@@ -45,8 +45,9 @@
         </div>
         <script type="text/javascript" src="cordova.js"></script>
         <script data-main="js/index.js" src="js/lib/requirejs/require.js"></script>
-<!--
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!--
         <script>
             var url = "http://localhost:8080/citizen?findByUIDI=555555555555",
                 method = 'GET';
@@ -123,6 +124,24 @@ xhr.send();
                 }
             });
         </script>-->
-
+<!--
+<script>
+    alert('sneding request');
+    var data = {
+        'name' : 'abhishek'
+    }
+    $.ajax({
+        url : 'http://localhost:8080/voter',
+        type : 'POST',
+        data : data,
+        success : function(data){
+            console.log(data);
+        },
+        error : function(err){
+            console.log(err);
+        }
+    })
+</script>
+-->
     </body>
 </html>

@@ -31,8 +31,7 @@ require(['app', 'events/main', 'bootstrap', 'stickit'], function (App) {
     App.start();
 
     App.execute('headerShow');
- //   App.execute('showHome');
-    App.execute('voterForm');
+    App.execute('showHome');
     /*   App.Main.show(new WelcomeView({
            collection: new Backbone.Collection([{
                firstName: 'Arvind',

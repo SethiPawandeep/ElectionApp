@@ -13,7 +13,7 @@
   "author": "Pawandeep",
   "license": "MIT",
   "dependencies": {
-    "body-parser": "^1.15.0",
+    "body-parser": "^1.15.2",
     "express": "^4.13.4",
     "pg": "^4.4.6",
     "pg-promise": "^3.2.0"

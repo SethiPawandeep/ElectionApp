@@ -19,6 +19,9 @@ define(['app'], function (App) {
             headerView.listenTo(headerView, 'openVoterRegister', function () {
                 App.execute('voterForm');
             });
+            headerView.listenTo(headerView, 'openLogin', function () {
+                App.execute('login');
+            });
         });
     });
 });

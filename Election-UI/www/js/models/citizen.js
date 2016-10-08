@@ -20,7 +20,6 @@ define(['backbone', 'config', 'jquery'], function (Backbone, Config, $) {
                 }
             }).done(function (data) {
                 console.log(data);
-                console.log('asdf');
             });
         },
         url: Config.path + '/citizen'

@@ -6,7 +6,8 @@ define(['marionette', 'tpl!templates/voterRegister', 'kendo/kendo.maskedtextbox'
             'input.lastName': 'last_name',
             'input.aadharNumber': 'aadharNumber',
             'input.enrollmentId': 'enrollmentId',
-            'input.phoneNumber': 'phoneNumber'
+            'input.phoneNumber': 'phoneNumber',
+            'input.password': 'password'
         },
         ui: {
             EnrollmentId: 'input.enrollmentId',

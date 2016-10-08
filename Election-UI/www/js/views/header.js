@@ -7,14 +7,16 @@ define(['marionette', 'tpl!templates/header'], function(Marionette, tplHeader){
             candidateLink: 'a.candidateLink',
             voteLink: 'a.voteLink',
             registerLink: 'a.registerLink',
-            resultLink: 'a.resultLink'
+            resultLink: 'a.resultLink',
+            loginLink: 'a.loginLink'
         },
         events: {
             'click @ui.homeLink': 'openHome',
             'click @ui.candidateLink': 'openCandidateList',
             'click @ui.voteLink': 'openVotePage',
             'click @ui.registerLink': 'openVoterRegister',
-            'click @ui.resultLink': 'openResult'
+            'click @ui.resultLink': 'openResult',
+            'click @ui.loginLink': 'openLogin'
         },
         openHome: function(e) {
             this.trigger('openHome');
@@ -35,6 +37,9 @@ define(['marionette', 'tpl!templates/header'], function(Marionette, tplHeader){
         openVoterRegister: function(e) {
             this.trigger('openVoterRegister');
             e.preventDefault();
+        },
+        openLogin: function(e){
+            this.trigger('openLogin');
         }
     });
     

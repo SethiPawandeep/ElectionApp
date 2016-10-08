@@ -6,7 +6,7 @@ define(['backbone', 'config', 'jquery'], function (Backbone, Config, $) {
         },
         findByPhoneNumber: function (phoneNumber) {
             $.ajax({
-                url: Config.path + '/login',
+                url: Config.path + '/voter',
                 param: {
                     phoneNumber: phoneNumber
                 }
@@ -14,7 +14,7 @@ define(['backbone', 'config', 'jquery'], function (Backbone, Config, $) {
                 console.log(data);
             });
         },
-        url: Config.path + '/login'
+        url: Config.path + '/voter'
     });
     return login;
 });

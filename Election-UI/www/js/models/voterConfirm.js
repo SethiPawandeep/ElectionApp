@@ -7,7 +7,8 @@ define(['backbone', 'config'], function (Backbone, Config) {
             enrollment_id1: '0000',
             enrollment_id2: '0000',
             enrollment_id3: '0000'*/
-        }
+        },
+        url: Config.path + '/voter'
     });
     /*
         var voterModelCollection = Backbone.Collection.extend({

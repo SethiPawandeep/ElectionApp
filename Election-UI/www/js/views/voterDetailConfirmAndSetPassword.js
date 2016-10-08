@@ -7,7 +7,7 @@ define(['marionette', 'tpl!templates/voterDetailConfirmAndSetPassword'], functio
             'input.aadharNumber': 'aadharNumber',
             'input.enrollmentId': 'enrollmentId',
             'input.phoneNumber': 'phoneNumber',
-            'input.passowrd': 'password'
+            'input.password': 'password'
         },
         events: {
             'click input.btn.voterConfirm': 'onVoterConfirm'
@@ -15,7 +15,11 @@ define(['marionette', 'tpl!templates/voterDetailConfirmAndSetPassword'], functio
         onVoterConfirm: function (e) {
             console.log('Confirm Clicked' + e);
             this.trigger('confirm');
+        },
+        onRender: function() {
+            this.stickit();
         }
+        
     });
     return voterConfirm;
 });
